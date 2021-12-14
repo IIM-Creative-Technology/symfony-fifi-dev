@@ -9,12 +9,16 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>All missions ✅</h1>
+    <p>Il y a {{ missions|length }} missions à ce jour</p>
+    <br>
+    {% for mission in missions %}
+        <article>
+            <h2>{{ mission.name }}</h2>
+            <p>{{ mission.description }}</p>
+            <p>{{ mission.priority }}</p>
+        </article>
+    {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/tabst/Documents/aidsh/src/Controller/MissionController.php'|file_link(0) }}">src/Controller/MissionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/tabst/Documents/aidsh/templates/mission/index.html.twig'|file_link(0) }}">templates/mission/index.html.twig</a></code></li>
-    </ul>
 </div>
 {% endblock %}
