@@ -24,7 +24,13 @@ class Mission
     private $Name;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+
+    /**
+     * @ORM\Column(type="string")
      */
     private $priority = [];
 
@@ -34,9 +40,10 @@ class Mission
     private $execute_date;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string")
      */
     private $status = [];
+
 
     public function getId(): ?int
     {
@@ -55,12 +62,25 @@ class Mission
         return $this;
     }
 
-    public function getPriority(): ?array
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPriority(): ?string
     {
         return $this->priority;
     }
 
-    public function setPriority(array $priority): self
+    public function setPriority(string $priority): self
     {
         $this->priority = $priority;
 
@@ -79,15 +99,16 @@ class Mission
         return $this;
     }
 
-    public function getStatus(): ?array
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    public function setStatus(array $status): self
+    public function setStatus(string $status): self
     {
         $this->status = $status;
 
         return $this;
     }
+
 }
