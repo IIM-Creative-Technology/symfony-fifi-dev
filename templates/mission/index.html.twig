@@ -10,7 +10,7 @@
 
 <div class="example-wrapper">
     <h1>All missions ✅</h1>
-    <p>Il y a {{ missions|length }} missions à ce jour</p>
+    <p>Il y a {{ pluralize(missions|length, 'Mission', 'Missions') }} à ce jour</p>
     <br>
     {% for mission in missions %}
         <article>
