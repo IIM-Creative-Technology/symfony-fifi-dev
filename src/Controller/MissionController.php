@@ -32,6 +32,6 @@ class MissionController extends AbstractController
      */
     public function show(Mission $mission): Response
     {
-        dd($mission);
+        return $this->render('mission/details.html.twig', compact('mission'));
     }
 }
