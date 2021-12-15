@@ -12,11 +12,13 @@
     <h1>All missions ✅</h1>
     <p>Il y a {{ pluralize(missions|length, 'Mission', 'Missions') }} à ce jour</p>
     <br>
+    <br>
     {% for mission in missions %}
         <article>
             <h2>{{ mission.name }}</h2>
             <p>{{ mission.description }}</p>
             <p>{{ mission.priority }}</p>
+            <button><a href="{{ path('app_mission_show', {id: mission.id}) }}">See the mission</a></button>
         </article>
     {% endfor %}
 
