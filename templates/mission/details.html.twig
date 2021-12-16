@@ -11,13 +11,12 @@
 <div class="example-wrapper">
     <h1>Hello here! ✅</h1
     <button><a href="{{ path('app_missions') }}">Back to the list</a> </button>
-    <p> {{ mission.name }} :</p>
-    <p> {{ mission.description }} :</p>
-    <p>Priority :  {{ mission.priority }} :</p>
- <p>  {{  mission.executeDate|date("m/d/Y")  }}</p>
-
+    <p> Name: {{ mission.name }} </p>
+    <p> Description: {{ mission.description }} :</p>
+    <p>Priority :  {{ mission.priority }} </p>
+     <p>Date :  {{  mission.executeDate|date("m/d/Y")  }}</p>
     <p>
-        Description : {{ mission.priority }}
+        Status : {{ mission.status }}
     </p>
 
 </div>
