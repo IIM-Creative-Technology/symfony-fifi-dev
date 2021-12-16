@@ -94,4 +94,23 @@ class MissionController extends AbstractController
     }
 
 
+    /**
+     * @Route("/missions/{id}/delete", name="app_missions_delete")
+     * @param int $id
+     * @return Response
+     */
+    public function delete(int $id): Response
+    {
+        $mission = $this->missionRepository->find($id);
+
+        if (null === $mission) {
+            throw new NotFoundHttpException();
+        }
+
+        $this->missionRepository->delete($mission);
+
+        return $this->redirectToRoute('app_missions');
+    }
+
+
 }

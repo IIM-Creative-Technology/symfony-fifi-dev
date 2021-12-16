@@ -18,6 +18,7 @@
     <p>
         Status : {{ mission.status }}
     </p>
+    <button><a href="{{ path('app_missions_delete', {'id': mission.id}) }}">Delete</a></button>
     <button><a href="{{ path('app_missions_update', {'id': mission.id}) }}">Update</a></button>
 </div>
 {% endblock %}
