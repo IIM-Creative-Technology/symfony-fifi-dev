@@ -9,6 +9,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MissionController extends AbstractController
@@ -54,6 +55,35 @@ class MissionController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("missions/{id}/update", name="app_missions_update")
+     * @param int $id
+     * @param Request $request
+     * @return Response
+     */
+    public function updateMission(int $id, Request $request): Response
+    {
+        $mission = $this->missionRepository->find($id);
+
+        if (null === $mission) {
+            throw new NotFoundHttpException();
+        }
+
+        $form = $this->createForm(MissionType::class, $mission);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mission = $form->getData();
+            $this->missionRepository->save($mission);
+
+            return $this->redirectToRoute('app_missions');
+        }
+
+        return $this->renderForm('mission/create.html.twig', [
+            'form' => $form
+        ]);
+    }
+
 
     /**
      * @Route ("/missions/{id<[0-9]+>}", name= "app_mission_show")
@@ -62,4 +92,6 @@ class MissionController extends AbstractController
     {
         return $this->render('mission/details.html.twig', compact('mission'));
     }
+
+
 }
