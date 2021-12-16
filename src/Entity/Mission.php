@@ -32,7 +32,7 @@ class Mission
     /**
      * @ORM\Column(type="string")
      */
-    private $priority = [];
+    private $priority;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -42,7 +42,7 @@ class Mission
     /**
      * @ORM\Column(type="string")
      */
-    private $status = [];
+    private $status;
 
 
     public function getId(): ?int
