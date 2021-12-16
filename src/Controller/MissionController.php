@@ -25,6 +25,15 @@ class MissionController extends AbstractController
     }
 
     /**
+     * @Route("/missions/create", name="app_missions_create")
+     */
+    public function create(): Response
+    {
+        return $this->render('mission/create.html.twig');
+
+    }
+
+    /**
      * @Route ("/missions/{id<[0-9]+>}", name= "app_mission_show")
      */
     public function show(Mission $mission): Response
