@@ -11,11 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MissionController extends AbstractController
 {
-    private $missionRepository;
-    public function __construct(EntityManagerInterface $objectManager)
-    {
-        $this->missionRepository = $objectManager->getRepository(Mission::class);
-    }
 
 
     /**
@@ -23,7 +18,9 @@ class MissionController extends AbstractController
      */
     public function index(MissionRepository $missionRepository): Response
     {
-        $missions = $missionRepository->findAll();
+       // $missions = $missionRepository->findAll();
+        $missions = $missionRepository->findBy([], ['execute_date' => 'DESC']);
+
         return $this->render('mission/index.html.twig', compact('missions'));
     }
 
