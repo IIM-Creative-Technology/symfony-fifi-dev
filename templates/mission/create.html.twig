@@ -10,6 +10,32 @@
 
 <div class="example-wrapper">
     <h1>Creer une mission! </h1
+    <button><a href="{{ path('app_missions') }}"> Back to the list</a></button>
+
+    <h2> Create a new mission :</h2>
+
+    {{ form_start(form) }}
+    <div>
+        {{ form_errors(form) }}
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.Name) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.description) }}
+        </div> <div class="col">
+            {{ form_row(form.priority) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.execute_date) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.status) }}
+        </div>
+    </div>
+
+    {{ form_end(form) }}
 
 </div>
 {% endblock %}

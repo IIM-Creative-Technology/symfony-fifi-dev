@@ -46,7 +46,7 @@ class MissionController extends AbstractController
             $mission = $form->getData();
             $this->missionRepository->save($mission);
 
-            return $this->redirectToRoute('task_list');
+            return $this->redirectToRoute('app_missions');
         }
 
         return $this->renderForm('mission/create.html.twig', [
