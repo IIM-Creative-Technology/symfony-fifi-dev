@@ -35,10 +35,41 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $password;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $intelligence;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $strength;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $speed;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $durability;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $power;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $combat;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $image;
+    
 
     /**
      * @deprecated since Symfony 5.3, use getUserIdentifier instead
@@ -118,4 +149,89 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+    public function getIntelligence(): ?int
+    {
+        return $this->intelligence;
+    }
+
+    public function setIntelligence(?int $intelligence): self
+    {
+        $this->intelligence = $intelligence;
+
+        return $this;
+    }
+
+    public function getStrength(): ?int
+    {
+        return $this->strength;
+    }
+
+    public function setStrength(?int $strength): self
+    {
+        $this->strength = $strength;
+
+        return $this;
+    }
+
+    public function getSpeed(): ?int
+    {
+        return $this->speed;
+    }
+
+    public function setSpeed(?int $speed): self
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    public function getDurability(): ?int
+    {
+        return $this->durability;
+    }
+
+    public function setDurability(?int $durability): self
+    {
+        $this->durability = $durability;
+
+        return $this;
+    }
+
+    public function getPower(): ?int
+    {
+        return $this->power;
+    }
+
+    public function setPower(?int $power): self
+    {
+        $this->power = $power;
+
+        return $this;
+    }
+
+    public function getCombat(): ?int
+    {
+        return $this->combat;
+    }
+
+    public function setCombat(?int $combat): self
+    {
+        $this->combat = $combat;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }
