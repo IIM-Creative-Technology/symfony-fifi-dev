@@ -9,7 +9,6 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Creer une mission! </h1
     <button><a href="{{ path('app_missions') }}"> Back to the list</a></button>
 
     <h2> Create a new mission :</h2>
@@ -30,6 +29,9 @@
         <div class="col">
             {{ form_row(form.execute_date) }}
         </div>
+       {#  <div class="col">
+            {{ form_row(form.users) }}
+        </div> #}
         <div class="col">
             {{ form_row(form.status) }}
         </div>

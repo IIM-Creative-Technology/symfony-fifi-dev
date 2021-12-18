@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Mission;
+//use App\Entity\User;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -36,6 +39,27 @@ class MissionType extends AbstractType
                     'high' => 'high',
 
                 ]])
+            /*->add('users', EntityType::class, [
+                'label' => "Super heroes",
+                'class' => User::class,
+                'query_builder' => function (EntityRepository $er) {
+                $query = $er->CreateQueryBuilder('r');
+              //  if ($options['status'] > 0) {
+                    $query->where('r.status = :status')->setParameter('status', 1);
+               // }
+                return $query;
+                },
+                'choice_label' => 'username',
+                "placeholder" => 'Select',
+                'multiple' => true,
+               // 'mapped'=> false,
+                'constraints' => array(
+                    new \Symfony\Component\Validator\Constraints\Count(['min' => 1, 'minMessage' => 'Please select an hero to execute the mission'])
+                )
+
+
+
+                ])*/
             ->add('submit', SubmitType::class, ['label' =>  'Create'])
 
         ;
