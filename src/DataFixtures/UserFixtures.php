@@ -26,11 +26,12 @@ class UserFixtures extends Fixture
             $json = file_get_contents("https://superheroapi.com/api/1247856435693245/".$a);
             $data= json_decode($json, TRUE);
             $user->setusername($data["name"]);
-            if ($data["id"] = 5){
-                $user->setRoles(['ROLE_SUPER_HERO']);
+            if ($data["id"] == 5){
+                $user->setRoles(['ROLE_ADMIN']);
 
             }else{
-                $user->setRoles(['ROLE_ADMIN']);
+                $user->setRoles(['ROLE_SUPER_HERO']);
+
             }
             $user->setPassword($this->userPasswordHasher->hashPassword($user, 'password'));
            // $user->setIntelligence($data["powerstats"]["intelligence"]);
