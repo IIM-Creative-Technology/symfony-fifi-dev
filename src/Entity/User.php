@@ -3,12 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Table(name="users")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -70,6 +73,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $image;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Mission::class, inversedBy="users")
+     */
+    private $missions;
+
+    public function __construct()
+    {
+        $this->missions = new ArrayCollection();
+    }
 
     /**
      * @deprecated since Symfony 5.3, use getUserIdentifier instead
@@ -234,6 +246,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @return Collection|Mission[]
+     */
+    public function getMissions(): Collection
+    {
+        return $this->missions;
+    }
+
+    public function addMission(Mission $mission): self
+    {
+        if (!$this->missions->contains($mission)) {
+            $this->missions[] = $mission;
+        }
+
+        return $this;
+    }
+
+    public function removeMission(Mission $mission): self
+    {
+        $this->missions->removeElement($mission);
+
+        return $this;
+    }
+    
 
 
 
