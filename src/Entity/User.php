@@ -69,7 +69,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="text")
      */
     private $image;
-    
+
 
     /**
      * @deprecated since Symfony 5.3, use getUserIdentifier instead
@@ -233,5 +233,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+
 
 }

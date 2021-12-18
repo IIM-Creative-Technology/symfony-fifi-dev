@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Mission;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class AppFixtures extends Fixture
 {

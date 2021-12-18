@@ -9,7 +9,7 @@
 </style>
 
 <div >
-    <h1>All missions ✅</h1>
+    <h1 >All missions ✅</h1>
     <p>Il y a {{ pluralize(missions|length, 'Mission', 'Missions') }} à ce jour</p>
     <br>
 
@@ -19,7 +19,12 @@
             <h2>{{ mission.name }}</h2>
             <p>{{ mission.description }}</p>
             <p>{{ mission.priority }}</p>
-            <button><a href="{{ path('app_mission_show', {id: mission.id}) }}">See the mission</a></button>
+            <a href="{{ path('app_mission_show', {id: mission.id}) }}" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                <span class="text">See the mission</span>
+            </a>
         </article>
     {% endfor %}
 

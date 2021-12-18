@@ -16,9 +16,9 @@ class TestController extends AbstractController
     {
         $numberOfResults = 10;
         $token = 1247856435693245;
-       // $i = 1;
+       $a = 1;
         for ( $i = 1; $i < $numberOfResults; $i++) {
-        $response = $httpClient->request('GET', 'https://superheroapi.com/api/1247856435693245/1/', [
+        $response = $httpClient->request('GET', 'https://superheroapi.com/api/1247856435693245/'.$a  , [
             'headers' =>[
                 'Accept'       => 'application/json',
                 'Content-Type' => 'application/json'
@@ -29,6 +29,7 @@ class TestController extends AbstractController
                 'result' => $numberOfResults,
             ]
         ]);
+            $a = $a +1;
         }
         $data = $response->toArray();
 
