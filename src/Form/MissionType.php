@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Mission;
-//use App\Entity\User;
+use App\Entity\User;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -34,32 +34,23 @@ class MissionType extends AbstractType
             ])
             ->add('status', ChoiceType::class, [
                 'choices'  => [
-                    'low' => 'low',
-                    'medium' => 'medium',
-                    'high' => 'high',
+                    'low' => 'to-do',
+                    'medium' => 'doing',
+                    'high' => 'done',
 
                 ]])
-            /*->add('users', EntityType::class, [
-                'label' => "Super heroes",
+            ->add('users', EntityType::class, [
+                'attr' => ['class' => 'form-control'],
+                // looks for choices from this entity
                 'class' => User::class,
-                'query_builder' => function (EntityRepository $er) {
-                $query = $er->CreateQueryBuilder('r');
-              //  if ($options['status'] > 0) {
-                    $query->where('r.status = :status')->setParameter('status', 1);
-               // }
-                return $query;
-                },
+
+                // uses the User.username property as the visible option string
                 'choice_label' => 'username',
-                "placeholder" => 'Select',
+
+                // used to render a select box, check boxes or radios
                 'multiple' => true,
-               // 'mapped'=> false,
-                'constraints' => array(
-                    new \Symfony\Component\Validator\Constraints\Count(['min' => 1, 'minMessage' => 'Please select an hero to execute the mission'])
-                )
-
-
-
-                ])*/
+                'expanded' => true,
+            ])
             ->add('submit', SubmitType::class, ['label' =>  'Create'])
 
         ;
