@@ -56,7 +56,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("users/{id}/update", name="app_users_update")
+     * @Route("users/{id}/update", name="app_heroes_update")
      * @param int $id
      * @param Request $request
      * @return Response
@@ -84,18 +84,28 @@ class UserController extends AbstractController
         ]);
     }
 
-
     /**
-     * @Route ("/users/{id<[0-9]+>}", name= "app_users_show")
+     * @Route("/heroes/{id}", name="app_heroes_show")
+     * @param int $id
+     * @return Response
      */
-    public function show(User $user): Response
+    public function show(int $id): Response
     {
-        return $this->render('user/details.html.twig', compact('user'));
+        $user = $this->userRepository->find($id);
+
+        if (null === $user) {
+            throw new NotFoundHttpException();
+        }
+
+        return $this->render('user/details.html.twig', [
+            'user' => $user
+        ]);
     }
 
 
+
     /**
-     * @Route("/users/{id}/delete", name="app_users_delete")
+     * @Route("/users/{id}/delete", name="app_heroes_delete")
      * @param int $id
      * @return Response
      */

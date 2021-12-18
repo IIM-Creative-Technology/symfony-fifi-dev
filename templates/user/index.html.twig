@@ -26,6 +26,12 @@
                     <div class="card-body">
                         <img src="{{ user.image }}" alt="">
                         <p>test</p>
+                        <a href="{{path('app_heroes_show', {'id': user.id}) }}" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </span>
+                            <span class="text">See the Heroe</span>
+                        </a>
                       {#   <a href="{{ path('app_user_show', {id: user.id}) }}" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>

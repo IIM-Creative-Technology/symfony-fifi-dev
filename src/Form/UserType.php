@@ -19,13 +19,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username', TextType::class)
-            ->add('roles', ChoiceType::class, [
+            /*->add('roles', ChoiceType::class, [
                 'choices'  => [
-                'ROLE_ADMIN' => 'ROLE_ADMIN',
-                'ROLE_SUPER_HERO' => 'ROLE_SUPER_HERO',
-
-        ]])
-            ->add('password', TextType::class)
+                'ROLE_ADMIN' => ["ROLE_ADMIN"],
+                'ROLE_SUPER_HERO' => ["ROLE_SUPER_HERO"],
+        ]])*/
+            //->add('password', TextType::class)
             ->add('intelligence', IntegerType::class)
             ->add('strength', IntegerType::class)
             ->add('speed', IntegerType::class)
@@ -34,6 +33,8 @@ class UserType extends AbstractType
             ->add('combat', IntegerType::class)
             ->add('image', TextType::class)
             //->add('missions')
+            ->add('submit', SubmitType::class, ['label' =>  'Create'])
+
         ;
     }
 

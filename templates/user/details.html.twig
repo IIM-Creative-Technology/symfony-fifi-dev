@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MissionController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <a href="{{ path('app_heroes') }}" class="btn btn-primary btn-icon-split mb-4 ml-4">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </span>
+        <span class="text">Back to the list</span>
+    </a>
+
+    <div class="card shadow mb-4 ml-6 ol-lg-6">
+        <div class="card-header py-3">
+            <h2 class="m-0 font-weight-bold text-primary">  {{ user.username }}</h2>
+        </div>
+        <div class="card-body">
+            <div class="flex">
+                <p>yo
+                </p>
+            </div>
+
+         {#    <a href="{{ path('app_missions_delete', {'id': mission.id}) }}" class="btn btn-danger btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                <span class="text">Delete Mission</span>
+            </a>
+            <button><a href="{{ path('app_missions_update', {'id': mission.id}) }}">Update</a></button>
+        </div>#}
+        <div class="card-footer">
+            <p>yo</p>
+        </div>
+    </div>
+
+
+{% endblock %}
