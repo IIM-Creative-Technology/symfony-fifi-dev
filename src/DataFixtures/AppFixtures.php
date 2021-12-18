@@ -16,7 +16,7 @@ class AppFixtures extends Fixture
             $mission->setName('Mission n°'. $i);
             $mission->setDescription('Blablabla');
             $mission->setPriority('low');
-           // $mission->setExecuteDate(new \DateTime('now'));
+            $mission->setExecuteDate(new \DateTime('now'));
             $mission->setStatus('to-do');
             $manager->persist($mission);
         }
