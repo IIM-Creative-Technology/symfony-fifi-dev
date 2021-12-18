@@ -22,7 +22,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/users", name="app_users")
+     * @Route("/heroes", name="app_heroes")
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -33,7 +33,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/users/create", name="app_users_create")
+     * @Route("/users/create", name="app_heroes_create")
      * @param Request $request
      * @return Response
      */

@@ -9,8 +9,8 @@
     </style>
 
     <div >
-        <h1 >All users ✅</h1>
-        <p>Il y a {{ pluralize(users|length, 'User', 'Users') }} à ce jour</p>
+        <h1 class="ml-4"    >All users </h1>
+        <p class="ml-4" >Today {{ pluralize(users|length, 'Heroe', 'Heroes') }} </p>
         <br>
 
         <br>
@@ -26,12 +26,12 @@
                     <div class="card-body">
                         <img src="{{ user.image }}" alt="">
                         <p>test</p>
-                        <a href="{{ path('app_user_show', {id: user.id}) }}" class="btn btn-primary btn-icon-split">
+                      {#   <a href="{{ path('app_user_show', {id: user.id}) }}" class="btn btn-primary btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-arrow-right"></i>
                                         </span>
                             <span class="text">See the user</span>
-                        </a>
+                        </a> #}
 
                     </div>
                     <div class="card-footer">
