@@ -33,7 +33,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/users/create", name="app_heroes_create")
+     * @Route("/heroes/create", name="app_heroes_create")
      * @param Request $request
      * @return Response
      */
@@ -47,7 +47,7 @@ class UserController extends AbstractController
             $user = $form->getData();
             $this->userRepository->save($user);
 
-            return $this->redirectToRoute('app_users');
+            return $this->redirectToRoute('app_heroes');
         }
 
         return $this->renderForm('user/create.html.twig', [
@@ -56,7 +56,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("users/{id}/update", name="app_heroes_update")
+     * @Route("heroes/{id}/update", name="app_heroes_update")
      * @param int $id
      * @param Request $request
      * @return Response
@@ -76,7 +76,7 @@ class UserController extends AbstractController
             $user = $form->getData();
             $this->userRepository->save($user);
 
-            return $this->redirectToRoute('app_users');
+            return $this->redirectToRoute('app_heroes');
         }
 
         return $this->renderForm('user/create.html.twig', [
@@ -105,7 +105,7 @@ class UserController extends AbstractController
 
 
     /**
-     * @Route("/users/{id}/delete", name="app_heroes_delete")
+     * @Route("/heroes/{id}/delete", name="app_heroes_delete")
      * @param int $id
      * @return Response
      */
@@ -119,7 +119,7 @@ class UserController extends AbstractController
 
         $this->userRepository->delete($user);
 
-        return $this->redirectToRoute('app_users');
+        return $this->redirectToRoute('app_heroes');
     }
 
 
