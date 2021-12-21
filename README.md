@@ -27,15 +27,15 @@ This project was carried out with the use of the following languages :
  - Open the project and install the composer dependencies
  
    ```sh
-      npm install
-      ```
+   npm install
+   ```
       
 - Edit the .env file with your database login informations
 
 - Run the website
    ```sh
-         symfony server:start
-         ```
+   symfony server:start
+   ```
 
 - start your mysql/db server Run the following command to create your db
    
