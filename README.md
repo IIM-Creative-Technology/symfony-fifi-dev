@@ -45,9 +45,10 @@ This project was carried out with the use of the following languages :
       
 - Migrate the data in the database 
 
-   ``sh
-         php bin/console doctrine:migrations:diff 
-         ```
+   ```sh
+   php bin/console doctrine:migrations:diff 
+   ```
+   
    ```sh
    php bin/console doctrine:migrations:migrate 
    ```
@@ -60,9 +61,9 @@ This project was carried out with the use of the following languages :
 
 - You can check the database in order to find the user with the role admin & connect to the backoffice using the password:
 
-      ```sh
-      password
-      ```
+   ```sh
+   password
+   ```
 
 ### Contributing :
 
