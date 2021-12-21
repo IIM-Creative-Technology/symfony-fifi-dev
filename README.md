@@ -33,13 +33,13 @@ This project was carried out with the use of the following languages :
 - Edit the .env file with your database login informations
 
 - Run the website
-   ``sh
+   ```sh
          symfony server:start
          ```
 
 - start your mysql/db server Run the following command to create your db
    
-   ``sh
+   ```sh
       php bin/console doctrine:database:create
       ```
       
@@ -48,21 +48,21 @@ This project was carried out with the use of the following languages :
    ``sh
          php bin/console doctrine:migrations:diff 
          ```
-   ``sh
-         php bin/console doctrine:migrations:migrate 
-         ```
+   ```sh
+   php bin/console doctrine:migrations:migrate 
+   ```
          
 - Load the fixtures for users & missions
 
-   ``sh
-            php bin/console doctrine:fixtures:load 
-            ```
+   ```sh
+   php bin/console doctrine:fixtures:load 
+   ```
 
 - You can check the database in order to find the user with the role admin & connect to the backoffice using the password:
 
-      ``sh
-            password
-            ```
+      ```sh
+      password
+      ```
 
 ### Contributing :
 
