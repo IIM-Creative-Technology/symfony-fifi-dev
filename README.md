@@ -10,9 +10,8 @@ AIDSH is a website allowing heroes to know their missions, edit their profile th
 
 This project was carried out with the use of the following languages :
 
-* HTML
-* CSS
-* JAVASCRIPT
+* SYMFONY
+* BOOSTRAP
 
 
 ## Getting Started
@@ -22,8 +21,48 @@ This project was carried out with the use of the following languages :
 - Clone the repo
 
    ```sh
-   git clone git@github.com:fifi-dev/tp_api.git
+   git clone git@github.com:IIM-Creative-Technology/symfony-fifi-dev.git
    ```
+  
+ - Open the project and install the composer dependencies
+ 
+   ```sh
+      npm install
+      ```
+      
+- Edit the .env file with your database login informations
+
+- Run the website
+   ``sh
+         symfony server:start
+         ```
+
+- start your mysql/db server Run the following command to create your db
+   
+   ``sh
+      php bin/console doctrine:database:create
+      ```
+      
+- Migrate the data in the database 
+
+   ``sh
+         php bin/console doctrine:migrations:diff 
+         ```
+   ``sh
+         php bin/console doctrine:migrations:migrate 
+         ```
+         
+- Load the fixtures for users & missions
+
+   ``sh
+            php bin/console doctrine:fixtures:load 
+            ```
+
+- You can check the database in order to find the user with the role admin & connect to the backoffice using the password:
+
+      ``sh
+            password
+            ```
 
 ### Contributing :
 
@@ -41,11 +80,12 @@ Contributions are what make the open source community such an amazing place to l
 
 - BAZANA NTOMO Fideline `https://github.com/fifi-dev`
 
+Pour toute question vous pouvez me joindre via l'adresse : `fideline_bzn@yahoo.com`
 
 
 ## Acknowledgements
 
-* [Freepik](https://www.freepik.com/)
+* [SB Admin](https://startbootstrap.com/previews/sb-admin-2)
 
 ##  Licence
 
