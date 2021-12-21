@@ -40,8 +40,8 @@ This project was carried out with the use of the following languages :
 - start your mysql/db server Run the following command to create your db
    
    ```sh
-      php bin/console doctrine:database:create
-      ```
+   php bin/console doctrine:database:create
+   ```
       
 - Migrate the data in the database 
 
